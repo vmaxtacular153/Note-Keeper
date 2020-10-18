@@ -4,21 +4,11 @@ import Footer from "./Footer";
 import Note from "./Note";
 import notes from "../notes";
 
-function newEntry(noteInfo) {
-    return ( <Note 
-        key={noteInfo.key}
-        title={noteInfo.title}
-        content={noteInfo.content}
-    />
-    );
-}
-
-
 function App() {
     return (
         <div>
             <Header />
-            {notes.map(newEntry)}
+            {notes.map(noteInfo => <Note key={noteInfo.key} title={noteInfo.title} content={noteInfo.content} />)};
             <Footer />
         </div>
     );
